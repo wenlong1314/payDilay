@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2026年9月及10月家庭支出，1号、2号账单与MASTERCARD(7899)待核对记录">
+  <title>家庭支出账本</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><i data-lucide="wallet-cards"></i></span>
+        <div>
+          <strong>家庭账本</strong>
+          <span>父母 · 夫妻 · 孩子</span>
+        </div>
+      </div>
+
+      <nav class="nav-list" aria-label="账本页面">
+        <button class="nav-item is-active" type="button" data-view="overview">
+          <i data-lucide="layout-dashboard" aria-hidden="true"></i><span>概览</span>
+        </button>
+        <button class="nav-item" type="button" data-view="details">
+          <i data-lucide="list-tree" aria-hidden="true"></i><span>支出明细</span>
+        </button>
+        <button class="nav-item" type="button" data-view="fixed">
+          <i data-lucide="repeat-2" aria-hidden="true"></i><span>固定支出</span>
+        </button>
+        <button class="nav-item" type="button" data-view="person-one">
+          <i data-lucide="chart-pie" aria-hidden="true"></i><span>1号非固定支出总结</span>
+        </button>
+        <button class="nav-item" type="button" data-view="person-two">
+          <i data-lucide="chart-column" aria-hidden="true"></i><span>2号非固定支出总结</span>
+        </button>
+        <button class="nav-item" type="button" data-view="rules">
+          <i data-lucide="clipboard-check" aria-hidden="true"></i><span>记账规则</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-note">
+        <span>统计月份</span>
+        <strong id="sidebar-month">2026 年 10 月</strong>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="month-caption">家庭支出 · 2026 年 10 月</p>
+          <h1 id="page-title">支出概览</h1>
+        </div>
+        <div class="header-actions">
+          <label class="month-control" for="month-select">统计月份
+            <select id="month-select">
+              <option value="2026-10">2026年10月 · 微信已更新</option>
+              <option value="2026-09">2026年9月</option>
+            </select>
+          </label>
+        <button class="print-button" type="button" id="print-button">
+          <i data-lucide="printer" aria-hidden="true"></i><span>打印</span>
+        </button>
+        </div>
+      </header>
+
+      <section class="view" id="view-october" aria-labelledby="october-title" hidden>
+        <div class="section-heading">
+          <div><p class="eyebrow">2026年10月 · 1号支付宝待合并 · 2号微信已更新</p><h2 id="october-title">固定支出与1号、2号账单汇总</h2></div>
+          <button class="print-button" type="button" id="october-details-button">查看流水与剔除记录</button>
+        </div>
+        <p class="audit-intro">2号固定生活费1,000元已去重，泰康医保140.60元与父母医保重复已剔除，保留父母医保150元。美团旧汇总258元由两笔明细258.24元替换。2号非固定支出4,163.84元（支付宝1,484.51 + 微信2,679.33）。亲属卡、退款及固定项均已按已确认信息处理；电费暂保留原固定标准。</p>
+        <div class="metric-grid" aria-label="10月去重后汇总">
+          <article class="metric-card metric-total"><span class="metric-label">10月已录金额合计 · 暂计</span><strong class="metric-value" id="october-total"></strong><span class="metric-note">固定 + 1号非固定 + 2号非固定</span></article>
+          <article class="metric-card"><span class="metric-label">10月固定支出</span><strong class="metric-value" id="october-fixed"></strong><span class="metric-note">保留父母医保150元，重复泰康医保已剔除</span></article>
+          <article class="metric-card"><span class="metric-label">1号非固定支出 · 暂计</span><strong class="metric-value" id="october-daily"></strong><span class="metric-note">银行卡与微信已录，支付宝新明细待合并</span></article>
+          <article class="metric-card"><span class="metric-label">2号非固定支出</span><strong class="metric-value" id="october-two-daily"></strong><span class="metric-note">支付宝、微信去重后的非固定支出</span></article>
+        </div>
+        <p class="summary-equation" id="october-summary-equation"></p>
+        <aside class="investment-note" aria-label="单列投资">
+          <span>黄金定投</span><strong id="october-investment"></strong><span class="investment-exclusion">单列投资，不计入上方支出合计</span>
+        </aside>
+        <section class="audit-section" aria-labelledby="october-one-audit-title">
+          <h3 id="october-one-audit-title">1号 · 支付宝核对进度</h3>
+          <p><strong>中融3,775.51元已更正为抖音还款。</strong>与支付宝花呗分属不同平台，不能据此认定支付宝消费已包含在银行卡中。这次更正用途不改变原已录金额。</p>
+          <p>支付宝成功支出43笔共3,924.42元：花呗消费3,325.52元、招商银行卡支付594.10元、Mastercard(4966)支付4.80元。其中550元、44.10元可对应已有银行卡记录，不再重复添加；花呗消费和4.80元卡消费尚待合并，当前总额未包含这部分新增明细。</p>
+          <p>余额宝花呗还款3,206.95 + 2,457.91 = 5,664.86元单列核对，不与花呗消费重复相加。1,036元租车订单与全额退款整组剔除；9月订单退款1,342元单列为往月退款。23,074元提现对应银行卡到账，为内部资金转移。</p>
+        </section>
+        <section class="audit-section" aria-labelledby="october-two-title">
+          <h3 id="october-two-title">2号 · 10月支出录入</h3>
+          <p>支付宝标记支出：<strong id="october-two-alipay"></strong>；固定电费去重后非固定支出：<strong id="october-two-alipay-daily"></strong>。原1,584元汇总已替换。</p>
+          <p>美团还款明细合计：<strong id="october-two-meituan"></strong>（支付宝80.17 + 微信178.07），已确认原258元是汇总，现以明细为准，旧汇总不再计入。</p>
+          <p>燃气费200元计入非固定居住支出；电费100元在固定项内去重，固定电费暂保留原标准200元，待确认是否替换。眼镜576元按用途归入医疗，原支付宝“餐饮美食”分类保留在明细中。</p>
+          <p>花呗还款134.63元按原账单“不计收支”保留，不加总；美团月付还款80.17元按原账单“支出”计一次，后续补录对应消费时需去重，不代表原消费发生于10月。三笔医保自费0元保留。</p>
+          <p class="audit-intro" id="october-two-status"></p>
+          <p>亲属卡原支出845元含已全退500元，按重复交易整组剔除，退款不再减第二遍。10月21日漂亮妈妈转账1,000元已全退剔除；10月22日有效转账1,000元归入已有固定生活费，不增加固定金额，也不再计非固定支出。两笔充电支付扣除退款后分别保留0.81元、0.68元。</p>
+          <p><strong>重复泰康医保140.60元已剔除：</strong>两笔各70.30元与父母医保重复，固定支出仅保留父母医保150元；泰康医保不再加入固定或非固定支出，原始流水保留供核对。微信手机充值50元并入原固定话费160元；原固定父母买菜钱1,250元保留。</p>
+          <p><strong>本次两渠道MASTERCARD(7899)退款后净支出：<span id="october-mastercard-total"></span>。</strong>支付宝14笔391.48元 + 微信64笔2,452.80元 = 原支出2,844.28元，减微信退款1.54元 = 2,842.74元。已包含在账单及固定项中，不再另加；其中电费100元、话费50元在固定项内去重。此数仅覆盖所给支付宝、微信明细，不代表独立卡账单的全部交易。</p>
+          <details><summary>查看MASTERCARD(7899)的78笔支出及2笔退款</summary>
+            <div class="table-wrap"><table class="expense-table"><thead><tr><th>时间</th><th>渠道</th><th>对方</th><th class="amount-cell">原始金额</th><th>家庭处理</th></tr></thead><tbody id="october-mastercard-body"></tbody></table></div>
+          </details>
+        </section>
+        <section class="audit-section" aria-labelledby="october-pending-title">
+          <h3 id="october-pending-title">已确认的去重处理</h3>
+          <ul class="audit-questions">
+            <li><strong>固定社保3,428.17元：</strong>10月12日向侯兴帆支付8,824.56元，减去10月20日北京梦境拾光科技有限公司到账5,396.39元，按组合净额替换10月原固定社保3,392元；原始流水保留，不重复计入。</li>
+            <li><strong>幼儿园1,698元：</strong>180元 + 1,518元替换原固定小班费1,650元，仅计一次。额外教育550元单独计入。</li>
+            <li><strong>抖音还款3,775.51元、信用卡还款436.20元：</strong>按付款月计入非固定支出，未重复添加对应平台消费明细；不代表这些消费均发生于10月。抖音还款不能用于抵销支付宝花呗消费。</li>
+            <li><strong>500元往返转账：</strong>已成对抵销；黄金定投1,396.16元单列投资。已确认的5,396.39元到账仅抵减固定社保，其他到账不冲减消费。</li>
+            <li><strong>微信88元：</strong>与银行卡不重复，另计一次；支付宝仅已匹配银行卡的550元及44.10元不再追加，其余新明细待合并。</li>
+          </ul>
+        </section>
+        <section class="audit-section" aria-labelledby="october-category-title">
+          <h3 id="october-category-title">10月已录入支出分类</h3>
+          <div class="category-bars" id="october-category-bars" style="margin-top:18px"></div>
+        </section>
+        <p class="audit-intro" id="october-balance"></p>
+        <p class="audit-intro" id="october-reconciliation"></p>
+        <p class="audit-intro">原其余固定项目沿用9月标准，共8,890元，含父母医保150元；重复泰康医保140.60元已剔除。实付电费100元、话费50元及生活费1,000元归入已有固定项不重复加总，原父母买菜钱1,250元保留。9月记录保留。<strong>固定电费暂按200元，是否改为100元仍待确认，当前按该标准合计23,224.95元。</strong></p>
+      </section>
+
+      <section class="view is-visible" id="view-overview" aria-labelledby="page-title">
+        <div class="metric-grid" aria-label="9月支出摘要">
+          <article class="metric-card metric-total">
+            <span class="metric-label">9 月总支出</span>
+            <strong class="metric-value" id="september-total">¥22,281.51</strong>
+            <span class="metric-note">固定与日常支出合计</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">固定支出</span>
+            <strong class="metric-value">¥13,932</strong>
+            <span class="metric-note"><b id="september-fixed-share">62.5%</b> 的当月支出</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">日常支出</span>
+            <strong class="metric-value" id="september-daily">¥8,349.51</strong>
+            <span class="metric-note" id="september-daily-note">1号 ¥5,137.51 · 2号 ¥3,212</span>
+          </article>
+          <article class="metric-card metric-saved">
+            <span class="metric-label">已避免重复</span>
+            <strong class="metric-value">¥3,450</strong>
+            <span class="metric-note">房贷 ¥2,450 · 生活费 ¥1,000</span>
+          </article>
+        </div>
+
+        <div class="overview-grid">
+          <section class="panel category-panel" aria-labelledby="category-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">支出结构</p>
+                <h2 id="category-title">按类别汇总</h2>
+              </div>
+              <span class="section-total" id="september-category-total">¥22,281.51</span>
+            </div>
+            <div class="category-layout">
+              <div class="donut-wrap">
+                <svg class="donut-chart" viewBox="0 0 220 220" role="img" aria-labelledby="donut-title donut-desc">
+                  <title id="donut-title">9月家庭支出分类占比</title>
+                  <desc id="donut-desc">9月支出分类，1号支付宝已按最新明细更新。</desc>
+                  <circle class="donut-track" cx="110" cy="110" r="78"></circle>
+                  <g id="donut-segments"></g>
+                </svg>
+                <div class="donut-center" aria-hidden="true">
+                  <span>本月合计</span>
+                  <strong id="september-donut-total">2.23 万</strong>
+                </div>
+              </div>
+              <div class="category-bars" id="category-bars"></div>
+            </div>
+          </section>
+
+          <section class="panel household-panel" aria-labelledby="household-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">日常支出</p>
+                <h2 id="household-title">夫妻账单对比</h2>
+              </div>
+            </div>
+            <div class="person-comparison">
+              <div class="person-row">
+                <div class="person-meta">
+                  <span class="person-dot wife-dot" aria-hidden="true"></span>
+                  <span>1号</span><strong id="september-one-total">¥5,137.51</strong>
+                </div>
+                <div class="bar-track"><span class="person-bar wife-bar" style="width:61.5%"></span></div>
+              </div>
+              <div class="person-row">
+                <div class="person-meta">
+                  <span class="person-dot husband-dot" aria-hidden="true"></span>
+                  <span>2号</span><strong id="september-two-total">¥3,212</strong>
+                </div>
+                <div class="bar-track"><span class="person-bar husband-bar" style="width:38.5%"></span></div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="section-heading compact-heading">
+              <div>
+                <p class="eyebrow">支付渠道</p>
+                <h3>日常支出流向</h3>
+              </div>
+            </div>
+            <div class="payment-list" id="payment-list"></div>
+          </section>
+        </div>
+
+        <section class="audit-section" aria-labelledby="september-one-alipay-title">
+          <h3 id="september-one-alipay-title">1号 · 9月支付宝已核对</h3>
+          <p><strong>消费净额3,306.51元</strong> = 成功消费3,506.51元 − 服装退款200元，替换原3,306元汇总，增加0.51元。Switch游戏机1,650元为本月最大单笔成功消费。</p>
+          <p>郑元转入后退回20,000元、资金转入余额宝及花呗还款2,020.19元均不计消费。三笔关闭订单1,451.74元剔除，其中9月24日租车1,342元与10月1日500 + 842元退款对应，两个月不重复扣减。钟嘉华30,000元转入单列资金流入，不认定为工资。</p>
+          <p>微信1,212元、银行卡619元沿用原汇总。支付宝银行卡支付32.17元与已给的100 + 100 + 99 + 320元暂无金额匹配，暂未另做重复扣减，待完整银行卡明细进一步核对。</p>
+          <details><summary>查看支付宝72条原始记录及去重处理</summary>
+            <div class="table-wrap"><table class="expense-table"><thead><tr><th>时间</th><th>对方/商品/交易号</th><th>付款方式/原分类</th><th>原始收支</th><th>状态/处理</th><th class="amount-cell">计入金额</th><th>核对说明</th></tr></thead><tbody id="september-one-alipay-body"></tbody></table></div>
+          </details>
+        </section>
+        <section class="dedupe-band" aria-labelledby="dedupe-title">
+          <div class="dedupe-icon" aria-hidden="true"><i data-lucide="shield-check"></i></div>
+          <div class="dedupe-copy">
+            <p class="eyebrow">本月核对</p>
+            <h2 id="dedupe-title">2号账单已去重</h2>
+            <p>原始账单 ¥6,662，扣除固定房贷 ¥2,450 和与父母买菜钱重复的生活费 ¥1,000，实际计入日常支出 ¥3,212。</p>
+          </div>
+          <div class="dedupe-equation" aria-label="去重计算">
+            <span>6,662</span><b>−</b><span>2,450</span><b>−</b><span>1,000</span><b>=</b><strong>3,212</strong>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-details" aria-labelledby="details-title" hidden>
+        <div class="section-heading page-section-heading">
+          <div>
+            <p class="eyebrow">2026 年 9 月</p>
+            <h2 id="details-title">全部支出明细</h2>
+          </div>
+          <div class="filter-group" role="group" aria-label="支出类型筛选">
+            <button type="button" class="filter-button is-active" data-filter="all">全部</button>
+            <button type="button" class="filter-button" data-filter="fixed">固定</button>
+            <button type="button" class="filter-button" data-filter="daily">日常</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="expense-table">
+            <thead><tr><th>项目</th><th>类别</th><th>归属</th><th>支付方式</th><th class="amount-cell">金额</th><th>备注</th></tr></thead>
+            <tbody id="expense-table-body"></tbody>
+          </table>
+        </div>
+        <p class="table-summary" id="table-summary" aria-live="polite"></p>
+      </section>
+
+      <section class="view" id="view-fixed" aria-labelledby="fixed-title" hidden>
+        <div class="section-heading page-section-heading">
+          <div><p class="eyebrow" id="fixed-caption">10月社保和小班费已替换，重复泰康医保已剔除</p><h2 id="fixed-title">固定支出</h2></div>
+          <span class="section-total" id="fixed-total">¥14,016.17 / 月</span>
+        </div>
+        <div class="fixed-list" id="fixed-list"></div>
+      </section>
+
+      <section class="view" id="view-person-summary" aria-labelledby="person-summary-title" hidden>
+        <div class="section-heading">
+          <div><p class="eyebrow" id="person-summary-month"></p><h2 id="person-summary-title"></h2></div>
+        </div>
+        <article class="person-total-card">
+          <span class="metric-label">当月非固定支出合计</span>
+          <strong class="metric-value" id="person-summary-total"></strong>
+          <p id="person-summary-note"></p>
+        </article>
+        <div class="person-summary-grid">
+          <section class="panel" aria-labelledby="person-channel-title">
+            <div class="section-heading"><h3 id="person-channel-title">按支付渠道</h3></div>
+            <div class="category-bars" id="person-summary-channels"></div>
+          </section>
+          <section class="panel" aria-labelledby="person-category-title">
+            <div class="section-heading"><h3 id="person-category-title">按支出类别</h3></div>
+            <div class="category-bars" id="person-summary-categories"></div>
+          </section>
+        </div>
+        <section class="panel person-detail-panel" aria-labelledby="person-detail-title">
+          <div class="section-heading">
+            <h3 id="person-detail-title">计入合计的支出明细</h3>
+            <div class="person-detail-controls">
+              <label class="category-control" for="person-category-filter">类别
+                <select id="person-category-filter"><option value="all">全部类别</option></select>
+              </label>
+              <span class="section-total" id="person-summary-count" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="table-wrap"><table class="expense-table">
+            <thead><tr><th>日期</th><th>项目</th><th>支付渠道</th><th>类别</th><th class="amount-cell">计入金额</th><th>说明</th></tr></thead>
+            <tbody id="person-summary-body"></tbody>
+          </table></div>
+        </section>
+      </section>
+
+      <section class="view" id="view-rules" aria-labelledby="rules-title" hidden>
+        <div class="section-heading page-section-heading">
+          <div><p class="eyebrow">减少重复与漏记</p><h2 id="rules-title">家庭记账规则</h2></div>
+        </div>
+        <ol class="rules-list">
+          <li><span>01</span><div><strong>固定支出只记一次</strong><p>10月社保按8,824.56 − 5,396.39 = 3,428.17元组合净额、小班费按1,698元替换原金额；社保到账仅抵减固定社保一次。泰康医保140.60元与父母医保重复已剔除，仅保留父母医保150元，泰康原始流水不再加入固定或非固定支出。生活费转账1,000元归入已有固定买菜钱1,250元，非固定项不再加；各渠道支付的固定项只计一次。</p></div></li>
+          <li><span>02</span><div><strong>账单内的固定项目要剔除</strong><p>9月银行卡房贷与给母亲的生活费已去重。其他月份按各自流水核对，不直接沿用历史扣减。</p></div></li>
+          <li><span>03</span><div><strong>小平台消费尽量统一到微信</strong><p>美团和抖音保留 9 月实际渠道，后续尽量通过微信支付，减少分散账单。</p></div></li>
+          <li><span>04</span><div><strong>未分类支出后续补充用途</strong><p>暂时无法确认用途的消费先归入“其他”，取得明细后再调整分类。</p></div></li>
+          <li><span>05</span><div><strong>消费、还款与资金转移分开核对</strong><p>黄金定投单列投资；除已确认配对抵减社保的5,396.39元外，其他流入不冲减消费。1号中融3,775.51元为抖音还款，与支付宝花呗分开；同平台消费与还款需去重，支付宝新明细待合并，500元往返转账抵销。2号支付宝134.63元还款不计收支；美团80.17 + 178.07 = 258.24元明细计一次，旧汇总258元剔除。亲属卡与1号银行卡去重，全额退款原支出剔除，部分退款按净额计入。电费100元、话费50元归入固定；卡支付是渠道汇总，不再另加。</p></div></li>
+        </ol>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="october-data.js"></script>
+  <script src="october-alipay-data.js"></script>
+  <script src="october-wechat-data.js"></script>
+  <script src="october-two-data.js"></script>
+  <script src="september-one-alipay-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

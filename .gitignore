@@ -1,0 +1,9 @@
+node_modules/
+.preview/*
+!.preview/verify-october.mjs
+.env
+.env.*
+!.env.example
+Thumbs.db
+Desktop.ini
+.DS_Store
